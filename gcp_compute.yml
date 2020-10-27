@@ -1,0 +1,14 @@
+plugin: google.cloud.gcp_compute
+zones:
+  - us-central1-a
+projects:
+  - ansible-collections
+service_account_file: google.json
+auth_kind: serviceaccount
+keyed_groups:
+  - prefix: gcp
+    key: labels
+hostnames:
+  - name
+compose:
+  ansible_host: networkInterfaces[0].accessConfigs[0].natIP
